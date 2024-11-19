@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        function sendEmail() {
+            const name = document.getElementById("name").value;
+            const subject = document.getElementById("subject").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            // Create the email body with better indentation and line breaks
+            const emailBody = `${message}\n\nRegards,\n${name}`;
+
+            // Construct the mailto link with subject and formatted body
+            const mailtoLink = `mailto:dia17340@diaestudents.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Trigger the mailto link
+            window.location.href = mailtoLink;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+          <img src="UAE_CONNECT.png" class="logo" alt="UAE Connect Logo">
+          <h1>Contact Us</h1>
+        </div>
+        <nav>
+          <a href="index.html">|--UAE Connect--|</a>
+          <a href="Housing.html">|--Housing--|</a>
+          <a href="Communities.html">|--Communities--|</a>
+          <a href="Services.html">|--Services--|</a>
+          <a href="Transportation.html">|--Transportation--|</a>
+          <a href="Education.html">|--Education--|</a>
+          <a href="Contactus.html">|--Contact Us--|</a>
+        </nav>
+      </header>
+
+    <main>
+        <form onsubmit="sendEmail(); return false;">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 UAE CONNECT</p>
+    </footer>
+</body>
+</html>
